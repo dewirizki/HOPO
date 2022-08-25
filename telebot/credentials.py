@@ -1,3 +1,3 @@
-bot_token = "1203034425:AAFRF-k9iN7ohj_oMagDyOnOTmk5bt1QBog"
-bot_user_name = "touristguide_bot"
+bot_token = "5722413336:AAEa-dH_C1LsKWyPrAJSYb0qA0OLCHFTuwY"
+bot_user_name = "HolidayPocketBot"
 URL = "https://hoporesearch.herokuapp.com/"
