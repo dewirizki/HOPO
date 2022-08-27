@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify,render_template
 import requests
-#import apikey
+import apikey
 import secrets
 from flask_cors import CORS, cross_origin
 import pandas as pd
@@ -15,6 +15,7 @@ app = Flask(__name__)
 CORS(app, support_credentials=True)
 app.config["DEBUG"] = True
 secret_key = secrets.token_urlsafe(16)
+#secret_key = apikey()
 
 global bot
 global TOKEN
