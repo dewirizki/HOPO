@@ -1,6 +1,5 @@
 python_telegram_bot==12.7
 requests==2.23.0
-Flask==1.1.2
+Flask==2.1.0
 Flask_Cors==3.0.9
-gunicorn
 waitress== 2.1.2
