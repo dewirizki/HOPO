@@ -138,8 +138,8 @@ def respond():
                     tourist_dict = {'title': [], 'latitude': [], 'longitude': []}
                     for i in range(len(tourist_data['results']['items'])):
                         tourist_dict['title'].append(tourist_data['results']['items'][i]['title'])
-                        tourist_dict['latitude'].append(tourist_data['results']['items'][i]['position'][0])
-                        tourist_dict['longitude'].append(tourist_data['results']['items'][i]['position'][1])
+                        #tourist_dict['latitude'].append(tourist_data['results']['items'][i]['position'][0])
+                        #tourist_dict['longitude'].append(tourist_data['results']['items'][i]['position'][1])
                     tourist_df = pd.DataFrame(tourist_dict)
                     day_of_travel = fit_and_inference(tourist_df, number_of_days)
                     tourist_df['day_of_travel'] = day_of_travel
