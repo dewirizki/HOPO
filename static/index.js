@@ -77,6 +77,7 @@ const formatData=(data)=>{
     for(var i=0;i<latitude.length;i++){
         places.push({
             day:day_of_travel[i],
+            coordinates:[latitude[i],longitude[i]],
             title:title[i]
         })
     }
@@ -90,7 +91,7 @@ const getResponse=async(data)=>{
     formData.append('days',data.days);
     formData.append("location",data.place)
 
-    const url="https://touristbot-jd.herokuapp.com//generate";
+    const url="https://hoporesearch.herokuapp.com//generate";
     const config={
         method:"POST",
         body:formData
