@@ -77,7 +77,6 @@ const formatData=(data)=>{
     for(var i=0;i<latitude.length;i++){
         places.push({
             day:day_of_travel[i],
-            coordinates:[latitude[i],longitude[i]],
             title:title[i]
         })
     }
