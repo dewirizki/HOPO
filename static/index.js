@@ -91,7 +91,7 @@ const getResponse=async(data)=>{
     formData.append('days',data.days);
     formData.append("location",data.place)
 
-    const url="https://hoporesearch.herokuapp.com//generate";
+    const url="https://hopo.vercel.app//generate";
     const config={
         method:"POST",
         body:formData
@@ -101,6 +101,7 @@ const getResponse=async(data)=>{
         const data=await response.json()
         formatData(data)
     }
+
     catch(err){
         loading.style.display="none";
         alert("Sorry could not process your request...")
