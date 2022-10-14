@@ -14,11 +14,12 @@ from telebot.mastermind import get_response
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 app.config["DEBUG"] = True
-secret_key = 'ccu7f53gbdTyJfXH57jtVgTyQzHoSoAdhUidAAYHjLc'
+secret_key = '9v4WnRQ3t1yQJX9IYSr9zXtwkbNFjzFjUcHoSEErISY'
 #secret_key = apikey()
 
 global bot
 global TOKEN
+
 TOKEN = bot_token
 bot = Bot(token=TOKEN)
 
