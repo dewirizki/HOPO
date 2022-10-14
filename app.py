@@ -14,7 +14,7 @@ from telebot.mastermind import get_response
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 app.config["DEBUG"] = True
-secret_key = secrets.token_urlsafe(16)
+secret_key = 'ccu7f53gbdTyJfXH57jtVgTyQzHoSoAdhUidAAYHjLc'
 #secret_key = apikey()
 
 global bot
