@@ -14,7 +14,7 @@ from telebot.mastermind import get_response
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 app.config["DEBUG"] = True
-secret_key = '9v4WnRQ3t1yQJX9IYSr9zXtwkbNFjzFjUcHoSEErISY'
+secret_key = '-El8D1HjO-9DXOtEIz9s08h4qPYdqOjq8xKhG1PDVYA'
 #secret_key = apikey()
 
 global bot
@@ -24,20 +24,10 @@ TOKEN = bot_token
 bot = Bot(token=TOKEN)
 
 
+
 def get_location_attributes(location):
     response = requests.get(
         f'https://geocoder.ls.hereapi.com/6.2/geocode.json?searchtext={location}&gen=9&apiKey={secret_key}')
-    if response.status_code == 200:
-        if len(response.json()['Response']['View']) != 0:
-            return response.json()
-        else:
-            return 'No such location found'
-    else:
-        return 'Something went wrong'
-
-def get_pictures_attributes(location):
-    response = requests.get(
-        f'https://picture.ls.hereapi.com/6.2/picture.json?searchtext={location}&gen=9&apiKey={secret_key}')
     if response.status_code == 200:
         if len(response.json()['Response']['View']) != 0:
             return response.json()
@@ -85,6 +75,7 @@ def generate_itinerary():
         if location_response.status_code == 200:
             if len(location_response.json()['results']['items']) > 0:
                 tourist_data = location_response.json()
+
                 tourist_dict = {'title': [], 'latitude': [], 'longitude': []}
                 for i in range(len(tourist_data['results']['items'])):
                     tourist_dict['title'].append(tourist_data['results']['items'][i]['title'])

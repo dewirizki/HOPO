@@ -7,8 +7,6 @@ const tbody=document.getElementById('tbody');
 const tableDiv=document.getElementById("tableDiv");
 const loading=document.getElementById("loading");
 let mymap;
-
-
 // Display Places
 const displayPlaces=(places)=>{
     tableDiv.style.display="block"
@@ -18,8 +16,6 @@ const displayPlaces=(places)=>{
         tr.innerHTML=`
         <td>${ele.day}</td>
         <td>${ele.title}</td>
-        <td>${ele.coordinates[0]}</td>
-        <td>${ele.coordinates[1]}</td>
         `
         tbody.appendChild(tr)
     })
@@ -71,7 +67,6 @@ places.forEach(ele=>{
 
 
 const formatData=(data)=>{
-    
     let places=[];
     const {day_of_travel,latitude,longitude,title} = data 
     for(var i=0;i<latitude.length;i++){
@@ -91,7 +86,7 @@ const getResponse=async(data)=>{
     formData.append('days',data.days);
     formData.append("location",data.place)
 
-    const url="https://hopo.vercel.app//generate";
+    const url="https://touristbot-jd.herokuapp.com//generate";
     const config={
         method:"POST",
         body:formData
@@ -101,7 +96,6 @@ const getResponse=async(data)=>{
         const data=await response.json()
         formatData(data)
     }
-
     catch(err){
         loading.style.display="none";
         alert("Sorry could not process your request...")
